@@ -1,0 +1,46 @@
+:root {
+  --color-primary-light: #4ea8de;
+  --color-primary-dark: #1e6f9f;
+  --color-secondary-light: #8284fa;
+  --color-secondary-dark: #5e60ce;
+
+  --color-base-700: #0d0d0d;
+  --color-base-600: #1a1a1a;
+  --color-base-500: #262626;
+  --color-base-400: #333333;
+  --color-base-300: #808080;
+  --color-base-200: #d9d9d9;
+  --color-base-100: #f2f2f2;
+
+  --color-feedback-danger: #e25858;
+}
+
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.125rem var(--color-primary-light);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+
+  background-color: var(--color-base-600);
+  color: var(--color-base-100);
+}
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
