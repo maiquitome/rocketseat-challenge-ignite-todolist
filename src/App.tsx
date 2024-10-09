@@ -1,9 +1,13 @@
 import "./global.css";
+import styles from "./App.module.css";
+import { Header } from "./components/Header";
 
 export function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Header />
+
+      <div className={styles.container}></div>
     </>
   );
 }
