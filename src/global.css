@@ -13,6 +13,11 @@
   --color-base-100: #f2f2f2;
 
   --color-feedback-danger: #e25858;
+
+  --font-family: "Inter", sans-serif;
+  --font-medium-regular: 400 1rem/140% var(--font-family);
+  --font-medium-bold: 700 1rem/140% var(--font-family);
+  --font-small-bold: 700 0.875rem/140% var(--font-family);
 }
 
 :focus {
@@ -40,7 +45,5 @@ input,
 textarea,
 select,
 button {
-  font-family: "Inter", sans-serif;
-  font-weight: 400;
-  font-size: 1rem;
+  font: var(--font-medium-regular);
 }
