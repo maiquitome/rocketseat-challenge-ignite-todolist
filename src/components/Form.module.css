@@ -1,0 +1,41 @@
+.form {
+  display: flex;
+  gap: 0.5rem;
+
+  margin-top: -1.6875rem;
+  & input {
+    height: 3.375rem;
+    border-radius: 0.5rem;
+    border: 0;
+    flex: 1;
+    padding: 1rem;
+
+    font: var(--font-medium-regular);
+    color: var(--color-base-100);
+    background-color: var(--color-base-500);
+
+    &::placeholder {
+      color: var(--color-base-300);
+    }
+    &:hover {
+      outline: 1px solid var(--color-secondary-light);
+    }
+  }
+  & button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+
+    font: var(--font-small-bold);
+    color: var(--color-base-100);
+    background-color: var(--color-primary-dark);
+
+    border: 0;
+    border-radius: 0.5rem;
+
+    &:hover {
+      background-color: var(--color-primary-light);
+    }
+  }
+}

@@ -22,7 +22,7 @@
 
 :focus {
   outline: none;
-  box-shadow: 0 0 0 0.125rem var(--color-primary-light);
+  box-shadow: 0 0 0 0.125rem var(--color-secondary-light);
 }
 
 * {
