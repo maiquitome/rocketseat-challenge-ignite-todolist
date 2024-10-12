@@ -3,6 +3,7 @@
   gap: 0.5rem;
 
   margin-top: -1.6875rem;
+  padding-bottom: 4rem;
   & input {
     height: 3.375rem;
     border-radius: 0.5rem;

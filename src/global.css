@@ -18,6 +18,7 @@
   --font-medium-regular: 400 1rem/140% var(--font-family);
   --font-medium-bold: 700 1rem/140% var(--font-family);
   --font-small-bold: 700 0.875rem/140% var(--font-family);
+  --font-extra-small-bold: 700 0.75rem var(--font-family);
 }
 
 :focus {

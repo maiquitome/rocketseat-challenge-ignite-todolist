@@ -1,0 +1,27 @@
+.counterWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  & .title {
+    font: var(--font-small-bold);
+    &.colorPrimaryLight {
+      color: var(--color-primary-light);
+    }
+    &.colorSecondaryLight {
+      color: var(--color-secondary-light);
+    }
+  }
+  & .counterNumber {
+    font: var(--font-extra-small-bold);
+    line-height: 0;
+    color: var(--color-base-200);
+    background-color: var(--color-base-400);
+    width: 1.5625rem;
+    height: 1.1875rem;
+    border-radius: 999px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
