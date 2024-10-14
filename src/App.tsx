@@ -10,8 +10,10 @@ export function App() {
       <Header />
 
       <div className={styles.container}>
-        <Form />
-        <TodoList />
+        <main>
+          <Form />
+          <TodoList />
+        </main>
       </div>
     </>
   );
