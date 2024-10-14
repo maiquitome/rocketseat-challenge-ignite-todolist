@@ -22,8 +22,13 @@
 }
 
 :focus {
-  outline: none;
+  /* Visible in the full-colour space */
   box-shadow: 0 0 0 0.125rem var(--color-secondary-light);
+
+  /* Visible in Windows high-contrast themes */
+  outline-color: transparent;
+  outline-width: 0.125rem;
+  outline-style: dotted;
 }
 
 * {
