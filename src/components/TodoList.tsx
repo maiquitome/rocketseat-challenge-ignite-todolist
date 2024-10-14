@@ -2,49 +2,21 @@ import { Counter } from "./Counter";
 import styles from "./TodoList.module.css";
 import clipboardIcon from "../assets/clipboard.svg";
 import { TodoListItem, TodoListItemType } from "./TodoListItem";
-import { useState } from "react";
-
-const todoListItems: TodoListItemType[] = [
-  {
-    id: 1,
-    isChecked: false,
-    description:
-      "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.",
-  },
-  {
-    id: 2,
-    isChecked: true,
-    description: "Descrição do item 2",
-  },
-];
 
 // const todoListItems: TodoListItemType[] = [];
 
-export function TodoList() {
-  const [todoListItemsState, setTodoListItems] = useState(todoListItems);
+interface TodoListProps {
+  onChangeCheckboxValue: (item: TodoListItemType) => void;
+  onDeleteTodoListItem: (item: TodoListItemType) => void;
+  todoListItemsState: TodoListItemType[];
+}
 
-  function changeCheckboxValue({ id }: TodoListItemType) {
-    const newTodoListItemsState = todoListItemsState.map((item) => {
-      if (item.id === id) {
-        item.isChecked = !item.isChecked;
-      }
-      return item;
-    });
-
-    setTodoListItems(newTodoListItemsState);
-
-    console.log(todoListItemsState);
-  }
-
-  function deleteTodoListItem({ id }: TodoListItemType) {
-    const newTodoListItemsState = todoListItemsState.filter(
-      (item) => item.id !== id
-    );
-
-    setTodoListItems(newTodoListItemsState);
-  }
-
-  const areThereAnyItemsOnTheTodoList = todoListItems.length > 0;
+export function TodoList({
+  onChangeCheckboxValue,
+  onDeleteTodoListItem,
+  todoListItemsState,
+}: TodoListProps) {
+  const areThereAnyItemsOnTheTodoList = todoListItemsState.length > 0;
 
   return (
     <div>
@@ -57,8 +29,8 @@ export function TodoList() {
           <TodoListItem
             key={item.id}
             item={item}
-            onChangeCheckboxValue={changeCheckboxValue}
-            onDeleteTodoListItem={deleteTodoListItem}
+            onChangeCheckboxValue={onChangeCheckboxValue}
+            onDeleteTodoListItem={onDeleteTodoListItem}
           />
         ))
       ) : (
