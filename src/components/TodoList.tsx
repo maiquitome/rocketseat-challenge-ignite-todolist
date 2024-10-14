@@ -36,6 +36,14 @@ export function TodoList() {
     console.log(todoListItemsState);
   }
 
+  function deleteTodoListItem({ id }: TodoListItemType) {
+    const newTodoListItemsState = todoListItemsState.filter(
+      (item) => item.id !== id
+    );
+
+    setTodoListItems(newTodoListItemsState);
+  }
+
   const areThereAnyItemsOnTheTodoList = todoListItems.length > 0;
 
   return (
@@ -50,6 +58,7 @@ export function TodoList() {
             key={item.id}
             item={item}
             onChangeCheckboxValue={changeCheckboxValue}
+            onDeleteTodoListItem={deleteTodoListItem}
           />
         ))
       ) : (

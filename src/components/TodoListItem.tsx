@@ -11,11 +11,13 @@ export interface TodoListItemType {
 interface TodoListItemProps {
   item: TodoListItemType;
   onChangeCheckboxValue: (item: TodoListItemType) => void;
+  onDeleteTodoListItem: (item: TodoListItemType) => void;
 }
 
 export function TodoListItem({
   item,
   onChangeCheckboxValue,
+  onDeleteTodoListItem,
 }: TodoListItemProps) {
   return (
     <div className={styles.todoListItemWrapper}>
@@ -34,7 +36,10 @@ export function TodoListItem({
         </div>
         <p>{item.description}</p>
       </div>
-      <button className={styles.deleteButton}>
+      <button
+        className={styles.deleteButton}
+        onClick={() => onDeleteTodoListItem(item)}
+      >
         <Trash size="1rem" />
       </button>
     </div>
