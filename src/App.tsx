@@ -63,10 +63,7 @@ export function App() {
 
       <div className={styles.container}>
         <main>
-          <Form
-            todoListItemsState={todoListItemsState}
-            onCreateTodoItem={createTodoItem}
-          />
+          <Form onCreateTodoItem={createTodoItem} />
           <TodoList
             onChangeCheckboxValue={changeCheckboxValue}
             onDeleteTodoListItem={deleteTodoListItem}

@@ -1,26 +1,47 @@
 import { PlusCircle } from "phosphor-react";
 import styles from "./Form.module.css";
-import { TodoListItemType } from "./TodoListItem";
 import { CreateTodoItemProps } from "../App";
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
 
 interface FormProps {
-  todoListItemsState: TodoListItemType[];
   onCreateTodoItem: (props: CreateTodoItemProps) => void;
 }
 
-export function Form({ todoListItemsState, onCreateTodoItem }: FormProps) {
+export function Form({ onCreateTodoItem }: FormProps) {
+  const [descriptionOfNewItem, setDescriptionOfNewItem] = useState("");
+
   const item = {
-    id: todoListItemsState.length + 1,
+    id: Date.now(),
     isChecked: false,
-    description: "teste",
+    description: descriptionOfNewItem,
   };
 
+  function handleDescriptionOfNewItem(event: ChangeEvent<HTMLInputElement>) {
+    event.target.setCustomValidity(""); // limpa a mensagem de campo obrigatório
+    setDescriptionOfNewItem(event.target.value);
+  }
+
+  function handleInvalidDescriptionOfNewItem(
+    event: InvalidEvent<HTMLInputElement>
+  ) {
+    event.target.setCustomValidity("Esse campo é obrigatório");
+  }
+
+  function handleCreateTodoItem(event: FormEvent<HTMLFormElement>) {
+    onCreateTodoItem({ event, item });
+    setDescriptionOfNewItem("");
+  }
+
   return (
-    <form
-      onSubmit={(event) => onCreateTodoItem({ event, item })}
-      className={styles.form}
-    >
-      <input type="text" placeholder="Adicione uma nova tarefa" />
+    <form onSubmit={handleCreateTodoItem} className={styles.form}>
+      <input
+        type="text"
+        placeholder="Adicione uma nova tarefa"
+        value={descriptionOfNewItem}
+        onChange={handleDescriptionOfNewItem}
+        onInvalid={handleInvalidDescriptionOfNewItem}
+        required
+      />
 
       <button>
         Criar
