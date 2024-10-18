@@ -13,15 +13,9 @@
   }
   & .counterNumber {
     font: var(--font-extra-small-bold);
-    line-height: 0;
     color: var(--color-base-200);
     background-color: var(--color-base-400);
-    width: 1.5625rem;
-    height: 1.1875rem;
+    padding: 0.125rem 0.5rem;
     border-radius: 999px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }

@@ -16,13 +16,25 @@ export function TodoList({
   onDeleteTodoListItem,
   todoListItemsState,
 }: TodoListProps) {
-  const areThereAnyItemsOnTheTodoList = todoListItemsState.length > 0;
+  const total = todoListItemsState.length;
+  const areThereAnyItemsOnTheTodoList = total > 0;
+  const completed = todoListItemsState.filter((item) => item.isChecked).length;
 
   return (
     <div>
       <header className={styles.header}>
-        <Counter title="Tarefas criadas" color="colorPrimaryLight" />
-        <Counter title="Concluídas" color="colorSecondaryLight" />
+        <Counter
+          total={total}
+          completed={null}
+          title="Tarefas criadas"
+          color="colorPrimaryLight"
+        />
+        <Counter
+          total={total}
+          completed={completed}
+          title="Concluídas"
+          color="colorSecondaryLight"
+        />
       </header>
       {areThereAnyItemsOnTheTodoList ? (
         todoListItemsState.map((item) => (
