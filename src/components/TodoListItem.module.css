@@ -41,6 +41,13 @@
         }
       }
 
+      &:hover {
+        .circle {
+          border-color: var(--color-primary-dark);
+          background-color: #10212a;
+        }
+      }
+
       &:has(input:checked) {
         .circle {
           border: 0;
